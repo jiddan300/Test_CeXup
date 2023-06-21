@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.detail.DetailActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_foreground" />
+        <TextView
+            android:id="@+id/tv_nama_matkul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:text="MataKul Dummy 1"/>
+        <TextView
+            android:id="@+id/tv_nama_dosen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Dosen Dummy 1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/linear_detail">
+
+        <EditText
+            android:id="@+id/nim_mhs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NIM Mahasiswa"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/nama_mhs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Mahasiswa"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_detail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/linear_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="25dp"
+        app:tint="@color/white"
+        android:src="@drawable/ic_search"
+        android:backgroundTint="@color/grey"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
